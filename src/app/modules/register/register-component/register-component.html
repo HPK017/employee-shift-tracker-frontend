@@ -1,15 +1,17 @@
-<div class="register-container">
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
     
-    <mat-card class="register-card">
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4">
 
-        <h2>Create Account</h2>
+    <mat-card class="p-4 shadow rounded-4 custom-card">
+
+        <h2 class="text-center mb-4">Create Account</h2>
 
         <form [formGroup]="registerForm" >
 
-            <mat-form-field appearance="outline" class="full-width">
+            <mat-form-field appearance="outline" class="w-100 mb-3">
                 <mat-label>Full Name</mat-label>
                 <mat-icon matPrefix>person</mat-icon>
-                <input matInput type="text" formControlName="fullname" placeholder="Enter the name">
+                <input matInput type="text" formControlName="fullname" placeholder="Enter your name">
 
                 @if(registerForm.controls['fullname'].hasError('required')){
                     <mat-error>Full name is Required</mat-error>
@@ -17,7 +19,7 @@
 
             </mat-form-field>
 
-             <mat-form-field appearance="outline" class="full-width">
+             <mat-form-field appearance="outline" class="w-100 mb-3">
                 <mat-label>Email</mat-label>
                 <mat-icon matPrefix>email</mat-icon>
                 <input matInput type="text" formControlName="email" placeholder="Enter your Email">
@@ -28,10 +30,10 @@
 
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="full-width">
+            <mat-form-field appearance="outline" class="w-100 mb-3">
                 <mat-label>Password</mat-label>
                 <mat-icon matPrefix>lock</mat-icon>
-                <input matInput type="text" formControlName="password" placeholder="Enter your password">
+                <input matInput formControlName="password" placeholder="Enter your password">
 
                 @if(registerForm.controls['password'].hasError('required')){
                     <mat-error>Email is Required</mat-error>
@@ -39,6 +41,16 @@
 
             </mat-form-field>
 
+            <button matButton="filled" color="primary" type= 'submit' class="w-100 py-2">
+                Register
+            </button>
+
+            <p class="text-center mt-3 mb-0">
+                Already have an account?
+                <a routerLink="/login">Login</a>
+            </p>
+
         </form>
     </mat-card>
+    </div>
 </div>
