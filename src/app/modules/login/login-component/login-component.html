@@ -1,0 +1,40 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+
+    <mat-card class="p-4 shadow rounded-4 custom-card">
+
+        <h2 class="text-center mb-4">LogIn</h2>
+
+        <form [formGroup]="loginForm" >
+
+             <mat-form-field appearance="outline" class="w-100 mb-3">
+                <mat-label>Email</mat-label>
+                <mat-icon matPrefix>email</mat-icon>
+                <input matInput type="text" formControlName="email" placeholder="Enter your Email">
+
+                @if(loginForm.controls['email'].hasError('required')){
+                    <mat-error>Email is Required</mat-error>
+                }
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100 mb-3">
+                <mat-label>Password</mat-label>
+                <mat-icon matPrefix>lock</mat-icon>
+                <input matInput formControlName="password" placeholder="Enter your password">
+
+                @if(loginForm.controls['password'].hasError('required')){
+                    <mat-error>Email is Required</mat-error>
+                }
+
+            </mat-form-field>
+
+            <button matButton="filled" type="submit" color="primary" class="w-100 py-2">
+                Register
+            </button>
+
+        </form>
+    </mat-card>
+    </div>
+</div>
